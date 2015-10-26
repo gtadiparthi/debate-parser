@@ -18,8 +18,8 @@ from PIL import Image, ImageFile
 import numpy as np
 import matplotlib.pyplot as plt
 
-stopwordshearing = set(["mr","go","said","one","two","three",
-	"four","know","want","time","think","now","u","say","let","will","well","says","ph"])
+stopwordshearing = set(["mr","go","said","one","two","three","clip",
+	"four","know","want","time","think","now","u","say","let","will","well","says","ph","ask"])
 class Transcript():
     def __init__(self, inputFileName,outputFileName):
         self.inputFileName = inputFileName
@@ -114,7 +114,7 @@ def read_hearing():
     	countWordsParty(name);
     	
 # Code for wordclouds
-    def generatewordcloud(party, inputImageFileName, outputImageFileName):
+    def getWords(party):
         global stopwordshearing
         speakerData = data[data.Party == party]
         allText = ""
@@ -123,7 +123,48 @@ def read_hearing():
         allText = allText.replace("e-mail","email")
         allText = allText.replace("e- mail","email")
         allText = allText.replace("op-ed","oped")
-        #print (allText)
+        sl = STOPWORDS | stopwordshearing
+        wc = WordCloud(background_color="white", max_words=2000,  stopwords=sl,
+                random_state=42)
+        
+        wc.generate(allText)
+        wcdf = pd.DataFrame(wc.words_)
+        wcdf.columns = ["word",party]
+        return wcdf
+        
+    rwc = getWords("R")
+    dwc = getWords("D")
+    rdwc = pd.merge(rwc, dwc, on = "word", how='outer')
+    rdwc=rdwc.fillna(0)
+    print 'Top 5 Repub words'
+    print rdwc.sort(['R'],ascending=0).head(5)
+    print 'Top 5 Dem words'
+    print rdwc.sort(['D'],ascending=0).head(5)
+    print rdwc.D.median()
+    print rdwc.R.median()
+    
+    RMedian = rdwc.R.median()
+    DMedian = rdwc.D.median()
+    
+    cond1 = rdwc['R'] > RMedian 
+    cond2 = rdwc['D'] < DMedian 
+    
+    rfreq = rdwc[cond1 & cond2][['word','R']]
+    cond1 = rdwc['R'] < RMedian 
+    cond2 = rdwc['D'] > DMedian 
+    dfreq = rdwc[cond1 & cond2][['word','D']]
+
+    print 'Top 5 Repub only words'
+    print rfreq.sort(['R'],ascending=0).head(5)
+    print 'Top 5 Dem only words'
+    print dfreq.sort(['D'],ascending=0).head(5)
+    #Convert dataframe to array of tuples
+    rtuples = [tuple(x) for x in rfreq.values]
+    dtuples = [tuple(x) for x in dfreq.values]
+    #Code for wordclouds
+    def generatewordcloud(freqTable, inputImageFileName, outputImageFileName):
+        global stopwordshearing
+        
         ImageFile.LOAD_TRUNCATED_IMAGES = True
 
         img = Image.open(inputImageFileName)
@@ -133,17 +174,16 @@ def read_hearing():
         wc = WordCloud(background_color="white", max_words=1000, mask=speakerArray, stopwords=sl,
                 random_state=42)
         
-        wc.generate(allText)
-        print wc.words_
+        wc.generate_from_frequencies(freqTable)
+        #print wc.words_
         # create coloring from image
         image_colors = ImageColorGenerator(speakerArray)
         wc.recolor(color_func=image_colors)
         wc.to_file(outputImageFileName)
 
     #For Hillary Clinton
-    generatewordcloud("R", "images/RepublicanLogo.png", "images/wc_RepublicanLogo.png");
-    generatewordcloud("D", "images/DemocraticLogo.png", "images/wc_DemocraticLogo.png");
-    
+    generatewordcloud(rtuples, "images/RepublicanLogo.png", "images/wc_RepublicanLogo.png");
+    generatewordcloud(dtuples, "images/DemocraticLogo.png", "images/wc_DemocraticLogo.png");
     def generatewordcloud(speaker, inputImageFileName, outputImageFileName):
         global stopwordshearing
         speakerData = data[data.Speaker == speaker]
@@ -170,6 +210,6 @@ def read_hearing():
         wc.to_file(outputImageFileName)
 
     #For Hillary Clinton
-    generatewordcloud("CLINTON", "images/clinton.png", "images/wc_clinton_hearing.png");
+    #generatewordcloud("CLINTON", "images/clinton.png", "images/wc_clinton_hearing.png");
 if __name__ =="__main__":
     read_hearing()
