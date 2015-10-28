@@ -17,57 +17,10 @@ from os import path
 from PIL import Image, ImageFile
 import numpy as np
 import matplotlib.pyplot as plt
+from transcript import *
 
 stopwordshearing = set(["mr","go","said","one","two","three","clip",
 	"four","know","want","time","think","now","u","say","let","will","well","says","ph","ask"])
-class Transcript():
-    def __init__(self, inputFileName,outputFileName):
-        self.inputFileName = inputFileName
-        self.outputFileName = outputFileName
-        self.raw_messages = []
-        self.speakerlist = []
-        self.messagelist = []
-        self.paragraphList = []
-
-    def open_file(self):
-        arq = codecs.open(self.inputFileName, "r", "utf-8-sig")
-        content = arq.read()
-        arq.close()
-        lines = content.split("\n")
-        lines = [l for l in lines if len(l) > 4]
-        for l in lines:
-            self.raw_messages.append(l.encode("utf-8"))
-
-    def feed_lists(self):
-        lineNo = 0
-        seqNo = 0
-        for l in self.raw_messages:
-			#Typically, the transcript is in the following order: 
-			# speaker:<space> message
-            speaker, sep, message = l.partition(": ")
-            lineNo += 1
-            if message:
-                self.speakerlist.append(speaker)
-                self.messagelist.append(message)
-                # store the previous speaker so that you can use it to print when there is only a line
-                prevSender = speaker
-                seqNo +=1
-            else:
-                self.speakerlist.append(prevSender)
-                self.messagelist.append(l)
-            self.paragraphList.append(seqNo)
-
-    def write_transcript(self, end=0):
-        if end == 0:
-            end = len(self.messagelist)
-        writer = csv.writer(open(self.outputFileName, 'w'))
-        writer.writerow(["SentenceNo","SequenceNo","Speaker","Text"])
-        for i in range(len(self.messagelist[:end])):
-            writer.writerow([i,self.paragraphList[i],self.speakerlist[i], self.messagelist[i]])
-
-    def get_speakers(self):
-        speakers_set = set(self.speakerlist)
-        return [e for e in speakers_set]
 
 def read_hearing():
     if len(sys.argv) < 2:
@@ -88,6 +41,8 @@ def read_hearing():
     print(party)
     
     data = pd.merge(data, party, on = 'Speaker')
+    
+    #Count the number of words each speaker spoke
     def countWords(speaker):
 
         speakerData = data[data.Speaker == speaker]
@@ -113,7 +68,7 @@ def read_hearing():
     for name in data.Party.unique():
     	countWordsParty(name);
     	
-# Code for wordclouds
+	#Count the number of words by each party member
     def getWords(party):
         global stopwordshearing
         speakerData = data[data.Party == party]
@@ -131,10 +86,12 @@ def read_hearing():
         wcdf = pd.DataFrame(wc.words_)
         wcdf.columns = ["word",party]
         return wcdf
-        
+	# Separate dataframes by Republican and Democrat's word frequencies
     rwc = getWords("R")
     dwc = getWords("D")
+    # Merge the word frequencies
     rdwc = pd.merge(rwc, dwc, on = "word", how='outer')
+    #Fill missing values with zeroes
     rdwc=rdwc.fillna(0)
     print 'Top 5 Repub words'
     print rdwc.sort(['R'],ascending=0).head(5)
@@ -142,10 +99,11 @@ def read_hearing():
     print rdwc.sort(['D'],ascending=0).head(5)
     print rdwc.D.median()
     print rdwc.R.median()
-    
+    # Calculate the median frequency of the word count
     RMedian = rdwc.R.median()
     DMedian = rdwc.D.median()
     
+    #Apply the conditions where a word frequency is higher in one party and lower in the other party
     cond1 = rdwc['R'] > RMedian 
     cond2 = rdwc['D'] < DMedian 
     
@@ -159,9 +117,10 @@ def read_hearing():
     print 'Top 5 Dem only words'
     print dfreq.sort(['D'],ascending=0).head(5)
     #Convert dataframe to array of tuples
+    # This is needed by the wordcloud
     rtuples = [tuple(x) for x in rfreq.values]
     dtuples = [tuple(x) for x in dfreq.values]
-    #Code for wordclouds
+    #Code for wordclouds using the frequency table
     def generatewordcloud(freqTable, inputImageFileName, outputImageFileName):
         global stopwordshearing
         
@@ -181,7 +140,7 @@ def read_hearing():
         wc.recolor(color_func=image_colors)
         wc.to_file(outputImageFileName)
 
-    #For Hillary Clinton
+    #Create word clouds for each of the input
     generatewordcloud(rtuples, "images/RepublicanLogo.png", "images/wc_RepublicanLogo.png");
     generatewordcloud(dtuples, "images/DemocraticLogo.png", "images/wc_DemocraticLogo.png");
     def generatewordcloud(speaker, inputImageFileName, outputImageFileName):
