@@ -19,6 +19,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from transcript import *
 
+stopwordshearing = set(["mr","go","said","one","two","three","clip",
+	"four","know","want","time","think","now","u","say","let","will","well","says","ph","ask","CROSSTALK","APPLAUSE"])
+
+
 def repub_debate():
     if len(sys.argv) < 2:
         print "Run: python main.py < Input TextFileName>  <Output csv filename>[regex. patterns]"
@@ -32,16 +36,16 @@ def repub_debate():
     # Print all the unique speakers to clean up any unwanted sentences and only keep speakers
     print(c.get_speakers())
     data = pd.read_csv(sys.argv[2])
+    data = data [~data.Speaker.isin(['MALE','SANTELLI','(UNKNOWN)','UNIDENTIFIED MALE','HARMAN', 'HARWOOD','CRAMER','EPPERSON','QUICK','QUINTANILLA'])]
     print 'Unique Speakers: ', sorted(list(data.Speaker.unique()))
     #Count the number of words each speaker spoke
     def countWords(speaker):
-
         speakerData = data[data.Speaker == speaker]
         allText = ""
         for index, row in speakerData.iterrows():
         	allText += str(row['Text'])+" "
 
-        words_all = sum([len(line.split()) for line in allText])
+        words_all = len(allText.split())
         print 'Total words:   ',speaker,': ', words_all
     	
     for name in data.Speaker.unique():
@@ -54,30 +58,79 @@ def repub_debate():
         for index, row in speakerData.iterrows():
         	allText += str(row['Text'])+" "
     
-        print (allText)
+        #print (allText)
         ImageFile.LOAD_TRUNCATED_IMAGES = True
 
         img = Image.open(inputImageFileName)
         img = img.resize((980,1080), Image.ANTIALIAS)
 
         speakerArray = np.array(img)
-        wc = WordCloud(background_color="white", max_words=1000, mask=speakerArray, stopwords=STOPWORDS)
+        sl = STOPWORDS | stopwordshearing
+        
+        wc = WordCloud(background_color="white", max_words=500, mask=speakerArray, stopwords=sl)
         wc.generate(allText)
         # create coloring from image
         image_colors = ImageColorGenerator(speakerArray)
         wc.recolor(color_func=image_colors)
         wc.to_file(outputImageFileName)
 
-    #For Hillary Clinton
-    #generatewordcloud("CLINTON", "images/clinton.png", "images/wc_clinton.png");
-    #For Bernie Sanders
-    #generatewordcloud("SANDERS", "images/sanders.png", "images/wc_sanders.png");
-    #For Webb
-    #generatewordcloud("WEBB", "images/webb.png", "images/wc_webb.png");
-    #For Chafee
-    #generatewordcloud("CHAFEE", "images/chafee.png", "images/wc_chafee.png");
-    #For O'MALLEY
-    #generatewordcloud("O'MALLEY", "images/omalley.png", "images/wc_omalley.png");
+    generatewordcloud('KASICH', "images/kasich.png", "images/wc_kasich.png");
+    generatewordcloud("HUCKABEE", "images/huckabee.png", "images/wc_huckabee.png");
+    generatewordcloud("BUSH", "images/bush.png", "images/wc_bush.png");
+    generatewordcloud("RUBIO", "images/rubio.png", "images/wc_rubio.png");
+    generatewordcloud("TRUMP", "images/trump.png", "images/wc_trump.png");
+    generatewordcloud("CARSON", "images/carson.png", "images/wc_carson.png");
+    generatewordcloud("FIORINA", "images/fiorina.png", "images/wc_fiorina.png");
+    generatewordcloud("CRUZ", "images/cruz.png", "images/wc_cruz.png");
+    generatewordcloud("CHRISTIE", "images/christie.png", "images/wc_christie.png");
+    generatewordcloud("PAUL", "images/paul.png", "images/wc_paul.png");
+    def generateoverallwordcloud(inputImageFileName, outputImageFileName):
 
+        allText = ""
+        for index, row in data.iterrows():
+        	allText += str(row['Text'])+" "
+    
+        #print (allText)
+        ImageFile.LOAD_TRUNCATED_IMAGES = True
+
+        img = Image.open(inputImageFileName)
+        img = img.resize((980,1080), Image.ANTIALIAS)
+
+        speakerArray = np.array(img)
+        sl = STOPWORDS | stopwordshearing
+        
+        wc = WordCloud(background_color="white", max_words=500, mask=speakerArray, stopwords=sl)
+        wc.generate(allText)
+        # create coloring from image
+        image_colors = ImageColorGenerator(speakerArray)
+        wc.recolor(color_func=image_colors)
+        wc.to_file(outputImageFileName)
+    generateoverallwordcloud("images/RepublicanLogo.png", "images/wc_rep_debate3.png");
+    
+    #Count the number of words by each party member
+    def getWords(speaker):
+        global stopwordshearing
+        speakerData = data[data.Speaker == speaker]
+        allText = ""
+        for index, row in speakerData.iterrows():
+        	allText += str(row['Text']).lower()+" "
+        allText = allText.replace("e-mail","email")
+        allText = allText.replace("e- mail","email")
+        allText = allText.replace("op-ed","oped")
+        sl = STOPWORDS | stopwordshearing
+        wc = WordCloud(background_color="white", max_words=2000,  stopwords=sl,
+                random_state=42)
+        
+        wc.generate(allText)
+        wcdf = pd.DataFrame(wc.words_)
+        wcdf.columns = ["word",speaker]
+        return wcdf
+	# Separate dataframes by Republican and Democrat's word frequencies
+    df_dict ={}
+    for name in data.Speaker.unique():
+        df_dict[name] = getWords(name)
+        print df_dict[name].head()
+    #dwc = getWords("D")
+    
 if __name__ == "__main__":
     repub_debate()
