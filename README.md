@@ -1,12 +1,12 @@
 # debate-parser
-Contains Python code to parse and generate word clouds from debate transcripts
+Contains Python code to parse debate transcripts, create structured datasets, and generate word clouds from semi-structured debate transcripts
 
-The accompanying article with the entire output can be found at the following blog post: http://ml4ma.blogspot.com/2015/10/democratic-presidential-debate-word.html
+The accompanying articles with the entire output can be found at the following blog post: http://ml4ma.blogspot.com/
 
-The data for the first 2016 democratic debate in Las Vegas was obtained from:
-https://www.washingtonpost.com/news/the-fix/wp/2015/10/13/the-oct-13-democratic-debate-who-said-what-and-what-it-means/
+The data used for each of the debates are from:
+https://www.washingtonpost.com/news/the-fix/
 
-A copy of the data is in data/dem_debate1
+The individual links to each original data source and created datasets are elaborated in the blogposts.
 
 Run the following command:
 ```
@@ -14,4 +14,5 @@ python main.py data/dem_debate1 dem_debate.csv
 ```
 The word clouds are generated in images directory.
 
+Acknowledgements go to nmoya who wrote a whatsapp parser https://github.com/nmoya/whatsapp-parser, which helped me quickly come up with a modified parser for other kinds of semi-structured data.
 

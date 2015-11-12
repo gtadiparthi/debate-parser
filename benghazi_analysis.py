@@ -50,7 +50,7 @@ def read_hearing():
         for index, row in speakerData.iterrows():
         	allText += str(row['Text'])+" "
 
-        words_all = sum([len(line.split()) for line in allText])
+        words_all = len(allText.split())
         print 'Total words:   ',speaker,': ', words_all
     	
     for name in data.Speaker.unique():
@@ -62,7 +62,7 @@ def read_hearing():
         for index, row in speakerData.iterrows():
         	allText += str(row['Text']).lower()+" "
         allText.replace("e-mail","email")
-        words_all = sum([len(line.split()) for line in allText])
+        words_all = len(allText.split()) 
         print 'Total words:   ',party,': ', words_all
     	
     for name in data.Party.unique():
