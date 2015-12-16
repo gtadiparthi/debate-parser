@@ -28,7 +28,7 @@ stopwordshearing = set(["mr","go","said","one","two","three","clip",
 
 def get_speakers():
 	if len(sys.argv) < 2:
-		print "Run: python get_speakers.py < Input TextFileName>  <Output csv filename>[regex. patterns]"
+		print ("Run: python get_speakers.py < Input TextFileName>  <Output csv filename>[regex. patterns]")
 		sys.exit(1)
 	c = Transcript(sys.argv[1], sys.argv[2])
 	c.open_file()
