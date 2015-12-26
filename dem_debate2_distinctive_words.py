@@ -1,3 +1,9 @@
+#This code has been rewritten for Python3
+#Trying to find distinctive words
+
+#Used the following link to learn:
+# https://de.dariah.eu/tatom/feature_selection.html
+
 #The purpose of this code is to 
 # Read input from debate transcript
 # Parse the debate transcript into the following fields:
@@ -42,15 +48,13 @@ stopwordshearing = set(["mr","go","said","one","two","three","clip",
 
 def repub_debate():
 	if len(sys.argv) < 2:
-		print ("Run: python repub_debate.py < Input TextFileName>  <Output csv filename>[regex. patterns]")
+		print ("Run: python dem_debate2.py < csv file from get speakers>")
 		sys.exit(1)
-
 	data = pd.read_csv(sys.argv[1])
 	print(data)
-
 	#data = data [~data.Speaker.isin(['MALE','SANTELLI','(UNKNOWN)','UNIDENTIFIED MALE','HARMAN', 'HARWOOD','CRAMER','EPPERSON','QUICK','QUINTANILLA'])]
 	#Filter list for 4th republican debate
-	data = data [~data.Speaker.isin(['MALE','BAKER','(UNKNOWN)','UNIDENTIFIED MALE','CAVUTO', 'BARTIROMO'])]
+	data = data [~data.Speaker.isin(['ANNOUNCER','MAJOR GARRETT','CORDES','OBRADOVICH','COONEY', 'DICKERSON'])]
 	
 	print (('Unique Speakers: ', sorted(list(data.Speaker.unique()))))
 	#Count the number of words each speaker spoke
@@ -123,8 +127,8 @@ def repub_debate():
 	#generateoverallwordcloud("images/RepublicanLogo.png", "images/wc_rep_debate3.png");
 	
 	#Count the number of words by each party member
-	def getWords(speaker):
-		global stopwordshearing
+	def getAllText(speaker):
+
 		speakerData = data[data.Speaker == speaker]
 		allText = ""
 		for index, row in speakerData.iterrows():
@@ -133,14 +137,20 @@ def repub_debate():
 		allText = allText.replace("e-mail","email")
 		allText = allText.replace("e- mail","email")
 		allText = allText.replace("op-ed","oped")
-		sl = STOPWORDS | stopwordshearing
-		wc = WordCloud(background_color="white", max_words=2000,  stopwords=sl,
-				random_state=42)
 		
-		wc.generate(allText)
-		wcdf = pd.DataFrame(wc.words_)
-		wcdf.columns = ["word",speaker]
-		return wcdf
+		return allText
+	def getOverAllText():
+
+		speakerData = data
+		allText = ""
+		for index, row in speakerData.iterrows():
+			#s.translate(table, string.punctuation)
+			allText += str(row['Text']).lower().translate(table)+" "
+		allText = allText.replace("e-mail","email")
+		allText = allText.replace("e- mail","email")
+		allText = allText.replace("op-ed","oped")
+		
+		return allText
 		#Count the number of words in the entire transcript
 	def getTotalWords():
 		global stopwordshearing
@@ -161,34 +171,6 @@ def repub_debate():
 		wcdf.columns = ["word","Total"]
 		return wcdf
 	# Separate dataframes by Republican and Democrat's word frequencies
-	df_dict ={}
-	i=1
-	for name in data.Speaker.unique():
-		df_dict[name] = getWords(name)
-		#print df_dict[name].head()
-		if i == 1:
-			rdwc = df_dict[name]
-		else:
-			rdwc = pd.merge(rdwc, df_dict[name], on = "word", how='outer')
-		i += 1
-	df_dict["Total"] = getTotalWords()
-	rdwc = pd.merge(rdwc,df_dict["Total"], on = "word", how='outer')
-	print (rdwc.head())
-	rdwc=rdwc.fillna(0)
-	rdwc.to_csv("wordfreq.csv")
-	def getAllText(speaker):
-		global stopwordshearing
-		speakerData = data[data.Speaker == speaker]
-		allText = ""
-		for index, row in speakerData.iterrows():
-			#s.translate(table, string.punctuation)
-			allText += str(row['Text']).lower().translate(table)+" "
-		allText = allText.replace("e-mail","email")
-		allText = allText.replace("e- mail","email")
-		allText = allText.replace("op-ed","oped")
-		
-		return allText
-#Calculate using countvectorizer and also calculate the consine similarities
 	df_list =[]
 	speaker_list=[]
 	i=1
@@ -199,35 +181,119 @@ def repub_debate():
 	vectorizer = CountVectorizer(input='content',stop_words=stop_words)
 	dtm = vectorizer.fit_transform(df_list)
 	vocab = vectorizer.get_feature_names()
+	
+	candidates_count = pd.DataFrame(dtm.A, columns=vocab).transpose()
+	
+	candidates_count.columns=speaker_list
+	#candidates_count['word'] = candidates_count.index
+
+
+	print(candidates_count)
+	
 	dtm = dtm.toarray()
 	vocab = np.array(vocab)
-	dist = 1 - cosine_similarity(dtm)
-	np.round(dist, 2)
-	print(dist[0,1])
-	print(dist[0,2])
-	mds = MDS(n_components=2, dissimilarity="precomputed", random_state=1)
-	pos = mds.fit_transform(dist)  # shape (n_components, n_samples)
-	xs, ys = pos[:, 0], pos[:, 1]
-	for x, y, name in zip(xs, ys, speaker_list):
-		color = 'orange' if "CLINTON" in name else 'skyblue'
-		plt.scatter(x, y, c=color)
-		plt.text(x, y, name)
-	plt.show()
-	mds = MDS(n_components=3, dissimilarity="precomputed", random_state=1)
-	pos = mds.fit_transform(dist)
-	from mpl_toolkits.mplot3d import Axes3D
-	fig = plt.figure()
-	ax = fig.add_subplot(111, projection='3d')
-	ax.scatter(pos[:, 0], pos[:, 1], pos[:, 2])
-	for x, y, z, s in zip(pos[:, 0], pos[:, 1], pos[:, 2], speaker_list):
-		ax.text(x, y, z, s)
-	plt.show()
+	rates = 100 * dtm / np.sum(dtm, axis=1, keepdims=True)	
 	
-	from scipy.cluster.hierarchy import ward, dendrogram
-	linkage_matrix = ward(dist)
-	names = speaker_list
-	dendrogram(linkage_matrix, labels=names)
-	plt.tight_layout() 
-	plt.show()
+	print(rates[:, 100:105])
+	print(vocab[100:105])
+	
+	#Get overall frequencies for the entire debate transcript
+	total_df_list = []
+	total_df_list.append(getOverAllText())
+	dtm1 = vectorizer.fit_transform(total_df_list)
+	vocab1 = vectorizer.get_feature_names()
+	
+	total_count = pd.DataFrame(dtm1.A, columns=vocab1).transpose()
+	total_count.columns = ['Total']
+	#print(total_count)
+	word_count = pd.concat([candidates_count,total_count], axis=1)
+	
+	cols = list(word_count.columns)
+	print(cols)
+	word_count['common']=1
+	for name in cols:
+		word_count[name+'_perc']= word_count[name]/word_count[name].sum()
+		word_count['common'] = word_count['common']*word_count[name]
+	for name in cols:
+		word_count[name+'_index']= word_count[name+'_perc']-word_count['Total_perc']
+		
+	print(word_count)
+	word_count['word']=word_count.index
+	def generatewordcloud(freqTable, inputImageFileName, outputImageFileName):
+		ImageFile.LOAD_TRUNCATED_IMAGES = True
+		img = Image.open(inputImageFileName)
+		img = img.resize((980,1080), Image.ANTIALIAS)
+		sl = STOPWORDS | stopwordshearing
+		speakerArray = np.array(img)
+		wc = WordCloud(background_color="white", max_words=1000, prefer_horizontal =1,mask=speakerArray, stopwords=sl,
+			random_state=42)
+	
+		wc.generate_from_frequencies(freqTable)
+	#print wc.words_
+	# create coloring from image
+		image_colors = ImageColorGenerator(speakerArray)
+		wc.recolor(color_func=image_colors)
+		wc.to_file(outputImageFileName)
+
+	def printTopWords():
+			for name in speaker_list:
+				clinton_condn = word_count[(word_count['common'] > 0)&(word_count[name]>3) &(word_count[name+'_index']>0)&(word_count[name+'_perc']>=0.003)]
+				clinton_condn = clinton_condn.sort([name+'_index'], ascending=False)
+				dfreq = clinton_condn[['word',name]]
+				print(name)
+				print (list(clinton_condn.sort([name+'_index'], ascending=False).head(20).word))
+				dtuples = [tuple(x) for x in dfreq.values]
+				#print(dtuples)
+				generatewordcloud(dtuples, 'images/'+str.lower(name)+'.png', 'images/wc_'+str.lower(name)+'2.png');
+			dem_wc = word_count.sort(['Total'],ascending=False)
+			dfreq = dem_wc[['word','Total']]
+			dtuples = [tuple(x) for x in dfreq.values]
+			generatewordcloud(dtuples, 'images/DemocraticLogo.png', 'images/wc_DemocraticLogo2.png');
+
+
+	printTopWords()
+	dtm1 = dtm1.toarray()
+	vocab1 = np.array(vocab1)
+	rates1 = 100 * dtm1 / np.sum(dtm1, axis=1, keepdims=True)	
+	print(rates1[:, 100:105])
+	print(vocab1[100:105])
+	
+	
+	
+	sanders_indices, clinton_indices, omalley_indices = [], [],[]
+	for index, fn in enumerate(speaker_list):
+		if "SANDERS" in fn:
+			sanders_indices.append(index)
+		elif "CLINTON" in fn:
+			clinton_indices.append(index)
+		elif "OMALLEY" in fn:
+			omalley_indices.append(index)
+	sanders_rates = rates[sanders_indices, :]
+	clinton_rates = rates[clinton_indices, :]
+	omalley_rates = rates[omalley_indices, :]
+	
+	sanders_rates_avg = np.mean(sanders_rates, axis=0)
+	clinton_rates_avg = np.mean(clinton_rates, axis=0)
+	omalley_rates_avg = np.mean(omalley_rates, axis=0)
+	
+	distinctive_indices = (sanders_rates_avg * clinton_rates_avg * omalley_rates_avg) == 0
+	#print(np.count_nonzero(distinctive_indices))
+	ranking = np.argsort(sanders_rates_avg[distinctive_indices] + clinton_rates_avg[distinctive_indices] + omalley_rates_avg[distinctive_indices])[::-1]  # from highest to lowest; [::-1] reverses order.
+	#print(vocab[distinctive_indices][ranking])
+	
+	#Removing these indices from the corpus
+	
+	dtm = dtm[:, np.invert(distinctive_indices)]
+	rates = rates[:, np.invert(distinctive_indices)]
+	vocab = vocab[np.invert(distinctive_indices)]
+	#Recalucate the rates
+	sanders_rates = rates[sanders_indices, :]
+	clinton_rates = rates[clinton_indices, :]
+	omalley_rates = rates[omalley_indices, :]
+
+	sanders_rates_avg = np.mean(sanders_rates, axis=0)
+	clinton_rates_avg = np.mean(clinton_rates, axis=0)
+	omalley_rates_avg = np.mean(omalley_rates, axis=0)
+
 if __name__ == "__main__":
 	repub_debate()

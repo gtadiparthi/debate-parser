@@ -1,3 +1,5 @@
+# Cleaning this code to run on the 5th republican debate
+# Using python 3
 #The purpose of this code is to 
 # Read input from debate transcript
 # Parse the debate transcript into the following fields:
@@ -42,7 +44,7 @@ stopwordshearing = set(["mr","go","said","one","two","three","clip",
 
 def repub_debate():
 	if len(sys.argv) < 2:
-		print ("Run: python repub_debate.py < Input TextFileName>  <Output csv filename>[regex. patterns]")
+		print ("Run: python repub_debate.py < Input csv> ")
 		sys.exit(1)
 
 	data = pd.read_csv(sys.argv[1])

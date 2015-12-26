@@ -1,4 +1,4 @@
-JAKE TAPPER, CNN MODERATOR: I'm Jake Tapper. We're live at the Ronald Reagan Library in Simi Valley, California for the main event. Round 2 of CNN's presidential debate starts now.
+TAPPER: I'm Jake Tapper. We're live at the Ronald Reagan Library in Simi Valley, California for the main event. Round 2 of CNN's presidential debate starts now.
  
 The eleven leading Republican candidates for president are at their podiums. They are ready to face off, and if you've been watching this race, you know anything could happen over the next few hours.
  
@@ -18,7 +18,7 @@ Our goal for this evening is a debate. A true debate, with candidates addressing
  
 I'd like to invite each candidate to take 30 seconds to introduce him or herself to our audience. First to you, Senator Paul.
  
-SEN. RAND PAUL, R-KY.: Good evening, everyone. I'm an eye surgeon from Bowling Green, Kentucky. My wife, Kelly, and I have been married for nearly 25 years, and I spend my days defending the Constitution and the Bill of Rights.
+PAUL: Good evening, everyone. I'm an eye surgeon from Bowling Green, Kentucky. My wife, Kelly, and I have been married for nearly 25 years, and I spend my days defending the Constitution and the Bill of Rights.
  
 I think there's nothing more important than understanding that the Constitution restrains government, not the people.
  
@@ -26,7 +26,7 @@ Thank you.
  
 (APPLAUSE)
  
-FORMER GOV. MIKE HUCKABEE, R-ARK.: I'm Mike Huckabee. I'm delighted to be on this stage with some remarkable fellow Republicans.
+HUCKABEE: I'm Mike Huckabee. I'm delighted to be on this stage with some remarkable fellow Republicans.
  
 None of us are a self-professed socialist. None of us on this state are under investigation by the FBI because we destroyed government records, or because we leaked secrets.
  
@@ -38,7 +38,7 @@ And I'm delighted to be here with all of these guys, and would put any of them i
  
 (APPLAUSE)
  
-SEN. MARCIO RUBIO, R-FL.: Thank you. My name is Marco Rubio. I'm from Florida. My wife Jeanette and I are the proud - we've been married 17 years, and we're the proud parents of four children, two of whom were able to join us here this evening.
+RUBIO: Thank you. My name is Marco Rubio. I'm from Florida. My wife Jeanette and I are the proud - we've been married 17 years, and we're the proud parents of four children, two of whom were able to join us here this evening.
  
 I'm honored to be here at the Reagan Library, at a place that honors the legacy of a man who inspired not just my interest in public service, but also our love for country.
  
@@ -48,11 +48,11 @@ And I'm also aware that California has a drought, and so that's why I made sure 
  
 TAPPER: Senator Cruz?
  
-SEN. TED CRUZ, R-TEXAS: I'm Ted Cruz. I am the son of an Irish-Italian mom and a Cuban immigrant dad who fled oppression and came to America seeking freedom. I'm a husband to my best friend, Heidi, who's here tonight. I'm a dad to two little girls who are the loves of my life, Caroline and Catherine.
+CRUZ: I'm Ted Cruz. I am the son of an Irish-Italian mom and a Cuban immigrant dad who fled oppression and came to America seeking freedom. I'm a husband to my best friend, Heidi, who's here tonight. I'm a dad to two little girls who are the loves of my life, Caroline and Catherine.
  
 If you're fed up with Washington, if you're looking for someone to stand up to career politicians in both parties, I'm the only one on this stage who has done that over and over again, and if we stand together, we can bring America back.
  
-BEN CARSON: Hi, I'm Ben Carson, and I'm a retired pediatric neurosurgeon. I'm here with my wife, Candy, of 40 years, and two of my sons, and their wives.
+CARSON: Hi, I'm Ben Carson, and I'm a retired pediatric neurosurgeon. I'm here with my wife, Candy, of 40 years, and two of my sons, and their wives.
  
 I stress the pediatric part of my career because the reason that I've gotten involved in this race is because I'm very concerned about the future of our children, and the direction of our country is one that does not portend well, unless we, the people, intervene and retake our rightful place at the pinnacle.
  
@@ -60,13 +60,13 @@ And I just want to be - make it clear that I'm grateful to be here with all of y
  
 (APPLAUSE)
  
-DONALD TRUMP: I'm Donald Trump. I wrote "The Art of the Deal". I say not in a braggadocious way, I've made billions and billions of dollars dealing with people all over the world, and I want to put whatever that talent is to work for this country so we have great trade deals, we make our country rich again, we make it great again. We build our military, we take care of our vets, we get rid of Obamacare, and we have a great life altogether.
+TRUMP: I'm Donald Trump. I wrote "The Art of the Deal". I say not in a braggadocious way, I've made billions and billions of dollars dealing with people all over the world, and I want to put whatever that talent is to work for this country so we have great trade deals, we make our country rich again, we make it great again. We build our military, we take care of our vets, we get rid of Obamacare, and we have a great life altogether.
  
 Thank you. Thank you.
  
 (APPLAUSE)
  
-FORMER GOV. JEB BUSH, R-FLA.: I'm Jeb Bush, and I believe America's on the verge of its greatest century, and I'm ready to lead. I'm a committed, conservative reformer that cut taxes, that balanced budgets, that took on the special interest in Florida, and we won.
+BUSH: I'm Jeb Bush, and I believe America's on the verge of its greatest century, and I'm ready to lead. I'm a committed, conservative reformer that cut taxes, that balanced budgets, that took on the special interest in Florida, and we won.
  
 I look forward to talking tonight about how we can fix a broken Washington D.C., and create an environment where people can rise up again in this great country.
  
@@ -74,19 +74,19 @@ Thank you.
  
 (APPLAUSE)
  
-GOV. SCOTT WALKER, R-WIS.: Good evening, I'm Scott Walker, and tonight, I want to thank Mrs. Reagan, and the Reagan Library for hosting us. You see, in my lifetime, the greatest president was a governor from California. Ronald Reagan knew how to go big, and go bold. He understood the essence of moving this country forward, and that's what I did when I took on the status quo in my state, and the Washington based special interest.
+WALKER: Good evening, I'm Scott Walker, and tonight, I want to thank Mrs. Reagan, and the Reagan Library for hosting us. You see, in my lifetime, the greatest president was a governor from California. Ronald Reagan knew how to go big, and go bold. He understood the essence of moving this country forward, and that's what I did when I took on the status quo in my state, and the Washington based special interest.
  
 Now, more than ever, America needs a leader who will go big and bold again. Someone who's been tested. I'm ready to be that leader. Thank you.
  
 (APPLAUSE)
  
-CARLY FIORINA: Good evening. My story, from secretary to CEO, is only possible in this nation, and proves that everyone of us has potential. My husband, Frank, of 30 years, started out driving a tow truck for a family owned auto body shop. We have come to a pivotal point in our nation's history where this nation's possibilities and potential are being crushed by a government grown so big, so powerful, so inept, so corrupt, and a political class that refuses to do anything about it.
+FIORINA: Good evening. My story, from secretary to CEO, is only possible in this nation, and proves that everyone of us has potential. My husband, Frank, of 30 years, started out driving a tow truck for a family owned auto body shop. We have come to a pivotal point in our nation's history where this nation's possibilities and potential are being crushed by a government grown so big, so powerful, so inept, so corrupt, and a political class that refuses to do anything about it.
  
 I am prepared to lead the resurgence of this great nation.
  
 (APPLAUSE)
  
-GOV. JOHN R. KASICH, R-OHIO: Hello, I'm John Kasich, the Governor of Ohio. Emma, and Reese, my children, and Karen, love 'ya girls. Thanks for watching tonight.
+KASICH: Hello, I'm John Kasich, the Governor of Ohio. Emma, and Reese, my children, and Karen, love 'ya girls. Thanks for watching tonight.
  
 By the way, I think I actually flew on this plane with Ronald Reagan when I was a congressman, and his goals, and mine, really much - are pretty much the same. Lift Americans, unify, give hope, grow America, and restore it is to that great, shining city on a hill.
  
@@ -94,7 +94,7 @@ Yes, he was a great one, and I learned much from watching him. The most importan
  
 (APPLAUSE)
  
-GOV. CHRIS CHRISTIE, R-N.J.: Hi, my name is Chris Christie, and I'd like to you take the camera off me and put it on the audience because I'd like to ask all of you, how many of you, raise your hand, believe that in today's Barak Obama America your children will have a better life than you've had?
+CHRISTIE: Hi, my name is Chris Christie, and I'd like to you take the camera off me and put it on the audience because I'd like to ask all of you, how many of you, raise your hand, believe that in today's Barak Obama America your children will have a better life than you've had?
  
 You see? That's why I'm running for President. Because leadership is not about me, it's about our country. And, what we talk about tonight, it's not about us, it's about the people in the audience tonight, because in seven short years this president has stripped away their trust, and their faith, and their belief that the next generation will have a better life. He's stolen that from us, and when I'm president, I'm going to take it back.
  
@@ -126,7 +126,7 @@ As far as temperament - and we all know that - as far as temperament, I think I 
  
 And I may be an entertainer, because I've had tremendous success with number-one bestsellers all over the place, with "The Apprentice" and everything else I've done.
  
-But I will tell you this: What I am far and away greater than an entertainer is a businessman, and that's the kind of mindset this country needs to bring it back, because we owe $19 trillion right now, $19 trillion, and you need this kind of thinking to bring our country back.
+But I will tell you this What I am far and away greater than an entertainer is a businessman, and that's the kind of mindset this country needs to bring it back, because we owe $19 trillion right now, $19 trillion, and you need this kind of thinking to bring our country back.
  
 And believe me, my temperament is very good, very calm. But we will be respected outside of this country. We are not respected now.
  
@@ -160,13 +160,14 @@ TAPPER: ... Mr. Trump, I want to give you another chance - Mr. Trump, I want to 
  
 Governor Bush told me last week when I read him the quote from Governor Jindal that he agrees you're not a serious candidate.
  
-Tell Governor Bush why you are a serious candidate and what your qualifications are to be commander-in-chief. TRUMP: I've actually been in politics all my life, although I've been on that side as opposed to this side. I'm now a politician for about three months. Obviously, I'm doing pretty well. I'm number one in every polls (sic) by a lot.
+Tell Governor Bush why you are a serious candidate and what your qualifications are to be commander-in-chief. 
+TRUMP: I've actually been in politics all my life, although I've been on that side as opposed to this side. I'm now a politician for about three months. Obviously, I'm doing pretty well. I'm number one in every polls (sic) by a lot.
  
 But the qualification is that I've dealt with people all over the world, been successful all over the world. Everything I've done virtually has been a tremendous success.
  
 When markets changed, when things turned, I heard Governor Pataki, who, by the way, was a failed governor in New York, a very seriously failed - he wouldn't be elected dog catcher right now. I heard what he had to say.
  
-And I will tell you this: Atlantic City, I've made a tremendous amount of money in Atlantic City. I left seven years ago, I've gotten great credit for my timing, and that's what I'm all about.
+And I will tell you this Atlantic City, I've made a tremendous amount of money in Atlantic City. I left seven years ago, I've gotten great credit for my timing, and that's what I'm all about.
  
 I'm a businessman, did really well, really well, and Jeb, what I want to do is put that ability into this country to make our country rich again. And I can do that, and I'm not sure that anybody else in the group will be able to do that.
  
@@ -424,7 +425,7 @@ Mr. Trump, you say you can do business with President Vladimir Putin, you say yo
  
 TRUMP: So, number one, they have to respect you. He has absolutely no respect for President Obama. Zero.
  
-Syria's a mess. You look at what's going on with ISIS in there, now think of this: we're fighting ISIS. ISIS wants to fight Syria. Why are we fighting ISIS in Syria? Let them fight each other and pick up the remnants.
+Syria's a mess. You look at what's going on with ISIS in there, now think of this we're fighting ISIS. ISIS wants to fight Syria. Why are we fighting ISIS in Syria? Let them fight each other and pick up the remnants.
  
 I would talk to him. I would get along with him. I believe - and I may be wrong, in which case I'd probably have to take a different path, but I would get along with a lot of the world leaders that this country is not getting along with.
  
@@ -444,7 +445,7 @@ He himself said that the destruction of the Soviet Union - the fall of the Sovie
  
 He's trying to destroy NATO. And this is what this is a part of. He is exploiting a vacuum that this administration has left in the Middle East.
  
-Here's what you're going to see in the next few weeks: the Russians will begin to fly - fly combat missions in that region, not just targeting ISIS, but in order to prop up Assad.
+Here's what you're going to see in the next few weeks the Russians will begin to fly - fly combat missions in that region, not just targeting ISIS, but in order to prop up Assad.
  
 He will also, then, turn to other countries in the region and say, "America is no longer a reliable ally, Egypt. America is no longer a reliable ally, Saudi Arabia. Begin to rely on us."
  
@@ -520,7 +521,7 @@ Now, here's the - if they cheat, we slap the sanctions back on. If they help Ham
  
 TAPPER: ...Thank you, Governor. I want to go to Senator Paul.
  
-TRUMP(?): ...Slow (ph) and steady, (inaudible) chicken...
+TRUMP: ...Slow (ph) and steady, (inaudible) chicken...
  
 TAPPER: I want to go to Senator Paul. Senator Paul, the White House is rolling out the red carpet next week for the President of China, President Xi. Governor Walker says that President Obama should cancel the state dinner because of China's currency manipulation, and because of China's alleged cyber attacks against the United States.
  
@@ -554,7 +555,7 @@ FIORINA: ...Jake...
  
 TAPPER: ...Governor Bush...
  
-CRUZ(?): ...Jake...
+CRUZ: ...Jake...
  
 TAPPER: Governor Bush, your father was the chief diplomatic envoy to China back when Nixon opened relations to China. Is Scott Walker's approach the right one, canceling the state dinner?
  
@@ -724,7 +725,7 @@ I thought that everybody here passed ninth-grade civics. The courts cannot legis
  
 The courts can't make a law. They can interpret one. They can review one. They can't implement it. They can't force it.
  
-But here's what happened: Because the courts just decided that something was going to be and people relinquished it and the other two branches of government sat by silently - I thought we had three branches of government, they were all equal to each other, we have separation of powers, and we have checks and balances.
+But here's what happened Because the courts just decided that something was going to be and people relinquished it and the other two branches of government sat by silently - I thought we had three branches of government, they were all equal to each other, we have separation of powers, and we have checks and balances.
  
 If the court can just make a decision and we just all surrender to it, we have what Jefferson said was judicial tyranny.
  
@@ -1025,7 +1026,7 @@ Why not?
  
 CARSON: Well, I have also said, if anybody knows how to do that, that I would be willing to listen. And, if they can, you know, specify exactly how that's going to be done, and what the cost, and it sounds reasonable, then I think it's worth discussing...
  
-TRUMP(?): ...(INAUDIBLE)...
+TRUMP: ...(INAUDIBLE)...
  
 TAPPER: ...let's continue the conversation about illegal immigration with Dana Bash.
  
@@ -1089,7 +1090,8 @@ FIORINA: We have been talking about it for 25 years. This is why people are tire
  
 BASH: Ms. Fiorina - Ms. Fiorina, we're going to come to you, we're going to come to you.
  
-I just want to give Governor Bush a chance to respond to what Mr. Trump said. BUSH: Look, first of all, I wrote a book about this, three - four years ago, now. And I laid out a comprehensive, conservative approach for immigration reform.
+I just want to give Governor Bush a chance to respond to what Mr. Trump said. 
+BUSH: Look, first of all, I wrote a book about this, three - four years ago, now. And I laid out a comprehensive, conservative approach for immigration reform.
  
 And it does require securing the border. No one disagrees with that. But to build a wall, and to deport people - half a million a month - would cost hundreds of billions of dollars, Donald. Hundreds of billions of dollars. It would destroy community life, it would tear families apart.
  
@@ -1159,7 +1161,7 @@ CRUZ: Well, Jake, you know, I'm - I'm very glad that Donald Trump's being in thi
  
 I like and respect Ben Carson. I'll let him talk about his own plans.
  
-But I will say this: The natural next question that primary voters are asking, after we focus on illegal immigration is, okay, what are the records of the various candidates? And this is an issue on which there are stark differences.
+But I will say this The natural next question that primary voters are asking, after we focus on illegal immigration is, okay, what are the records of the various candidates? And this is an issue on which there are stark differences.
  
 A majority of the men and women on this stage have previously and publicly embraced amnesty. I am the only candidate on this stage who has never supported amnesty and, in fact, who helped lead the fight to stop a massive amnesty plan.
  
@@ -1195,7 +1197,7 @@ And third, we have 11 million or 12 million people, many of whom have been here 
  
 And we must deal with all three of these problems. We cannot deal with all three of these problems in one massive piece of legislation. I learned that. We tried it that way.
  
-Here's the way forward: First, we must - we must secure our border, the physical border, with - with a wall, absolutely. But we also need to have an entry/exit tracking system. 40 percent of the people who come here illegally come legally, and then they overstay the visa. We also need a mandatory e-verify system.
+Here's the way forward First, we must - we must secure our border, the physical border, with - with a wall, absolutely. But we also need to have an entry/exit tracking system. 40 percent of the people who come here illegally come legally, and then they overstay the visa. We also need a mandatory e-verify system.
  
 After we've done that, step two would be to modernize our legal immigration system so you come to America on the basis of what you can contribute economically, not whether or not simply you have a relative living here.
  
@@ -1265,7 +1267,7 @@ And meanwhile, what will continue to go on is what has gone on for 25 years. Wit
  
 And meanwhile, what has happened? Nothing. The border remains insecure. The legal immigration system remains broken. Look, we know what it takes to secure a border. We've heard a lot of great ideas here. Money, manpower, technology...
  
-TAPPER : Thank you, Ms. Fiorina.
+TAPPER: Thank you, Ms. Fiorina.
  
 FIORINA: ...mostly, apparently, leadership...
  
@@ -1279,7 +1281,9 @@ TRUMP: I agree 100 percent, by the way, with Carly on the fact that the Democrat
  
 But I believe that a reading of the 14th Amendment allows you to have an interpretation where this is not legal and where it can't be done. I've seen both sides, but some of the greatest scholars agree with me, without having to go through Congress.
  
-If you do go through Congress, you can absolutely solve the problem. TAPPER: Thank you, Mr. Trump. Senator Paul...
+If you do go through Congress, you can absolutely solve the problem. 
+
+TAPPER: Thank you, Mr. Trump. Senator Paul...
  
 FIORINA: But you - you would stipulate, Mr. Trump, but not everyone agrees with you.
  
@@ -1685,7 +1689,7 @@ You have millions of people in this country living paycheck to paycheck, and not
  
 We have a world that grows increasingly dangerous, and we are eviscerating our military spending and signing deals with Iran. And these - if this thing continues, we are going to be the first Americans to leave our children worse off than ourselves.
  
-That's why I'm missing votes. Because I am leaving the Senate, I'm not running for re-election, and I'm running for president because I know this: unless we have the right president, we cannot make America fulfill its potential, but with the right person in office, the 21st century can be the greatest era that our nation has ever known.
+That's why I'm missing votes. Because I am leaving the Senate, I'm not running for re-election, and I'm running for president because I know this unless we have the right president, we cannot make America fulfill its potential, but with the right person in office, the 21st century can be the greatest era that our nation has ever known.
  
 TAPPER: Thank you, Senator Rubio. I want to turn now to Hugh Hewitt.
  
@@ -1787,11 +1791,11 @@ TRUMP: I don't know. You feel safe right now? I don't feel so safe.
  
 PAUL: May I respond?
  
-WALKER:: That's because of Barack - that's because of Barack Obama.
+WALKER: That's because of Barack - that's because of Barack Obama.
  
 BUSH: That's - that's my brother.
  
-WALKER:: That's because of Barack Obama. We've had a president who called ISIS the J.V. squad, Yemen a success story, Iran a place we can do business with. It's not because of George W. Bush; it's because of Barack Obama...
+WALKER: That's because of Barack Obama. We've had a president who called ISIS the J.V. squad, Yemen a success story, Iran a place we can do business with. It's not because of George W. Bush; it's because of Barack Obama...
  
 (APPLAUSE)
  
@@ -1969,7 +1973,7 @@ TAPPER: Thank you, governor, I want to turn to ISIS. Governor Walker...
  
 FIORINA: We just spent - we just spent the last 10 minutes...
  
-TALKER: Governor Walker, there is a big debate now, we have been talking about ISIS here and there in this discussion, there a big debate right now about whether or not to send more U.S. troops to fight ISIS in Iraq and Syria.
+TAPPER: Governor Walker, there is a big debate now, we have been talking about ISIS here and there in this discussion, there a big debate right now about whether or not to send more U.S. troops to fight ISIS in Iraq and Syria.
  
 In the first debate earlier this evening, Senator Lindsey Graham argued that candidates are only serious about fighting ISIS if they're willing to send 10,000 U.S. troops to Iraq, 10,000 U.S. troops as part of a coalition to Syria.
  
@@ -2029,7 +2033,7 @@ TAPPER: ...Thank you, Governor. Dana Bash...
  
 KASICH: ...This is a giant battle in the world today...
  
-FIONNA: ...Jake, since everyone has gotten to weigh in on this military issue, I'd like to be able to do the same.
+FIORINA: ...Jake, since everyone has gotten to weigh in on this military issue, I'd like to be able to do the same.
  
 We have spent probably 12 minutes talking about the past. Let's talk about the future. We need the strongest military on the face of the planet, and everyone has to know it. And, specifically, what that means is we need about 50 Army brigades, we need about 36 Marine battalions, we need somewhere between 300, and 350 naval ships, we need to upgrade every leg of the nuclear triad...
  
@@ -2105,7 +2109,9 @@ CRUZ: It is true that after George W. Bush nominated John Roberts, I supported h
  
 It wasn't that the President Bushes wanted to appoint a liberal to the court, it's that it was the easier choice. Both David Souter and John Roberts, they didn't have a long paper trail. If you had nominated Edith Jones or Mike Ludig (ph) you would have had a bloody fight and they weren't willing to spend political capital to put a strong judicial conservative on the court.
  
-I have spent my entire life, starting from clerking for Chief Justice William Rehnquist on the United States Supreme Court, one of the most principled jurists. We have an out-of-control Court, and I give you my word, if I'm elected president, every single Supreme Court justice will faithfully follow the law and will not act like philosopher kings - TAPPER: Thank you, Senator.
+I have spent my entire life, starting from clerking for Chief Justice William Rehnquist on the United States Supreme Court, one of the most principled jurists. We have an out-of-control Court, and I give you my word, if I'm elected president, every single Supreme Court justice will faithfully follow the law and will not act like philosopher kings - 
+
+TAPPER: Thank you, Senator.
  
 CRUZ: - imposing their liberal policies on millions of Americans -
  
@@ -2317,7 +2323,7 @@ Here's the real issue.
  
 (APPLAUSE)
  
-The real issue - the real issue is not what are people using to commit violence, but why are they committing the violence? And here's the truth: Because you cannot separate the social, moral wellbeing of your people from their economic and other wellbeing. You cannot separate it.
+The real issue - the real issue is not what are people using to commit violence, but why are they committing the violence? And here's the truth Because you cannot separate the social, moral wellbeing of your people from their economic and other wellbeing. You cannot separate it.
  
 You can't have a strong country without strong people, you cannot have strong people without strong values, and you cannot have strong values without strong families and the institutions in this country that defend and support those families.
  
@@ -2445,7 +2451,9 @@ And today with millions of people watching this broadcast that are struggling pa
  
 TAPPER: I want to go another question right now.
  
-(CROSSTALK) WALKER: ... a lot of those people, though, and I'm going to echo what Senator Rubio just said. This is an issue where, we're talking about my state, it's thousands of manufacturing jobs. Thousands of manufacturing jobs for a rule the Obama administration, own EPA has said will have a marginal impact on climate change.
+(CROSSTALK) 
+
+WALKER: ... a lot of those people, though, and I'm going to echo what Senator Rubio just said. This is an issue where, we're talking about my state, it's thousands of manufacturing jobs. Thousands of manufacturing jobs for a rule the Obama administration, own EPA has said will have a marginal impact on climate change.
  
 So we're going to put thousands and thousands of jobs in my state, I think it's something like 30,000 in Ohio, other states across this country, we're going to put people - manufacturing jobs, the kind of jobs that are far greater than minimum wage, this administration is willing to put at risk for something its own EPA says is marginal (ph)...
  
@@ -2473,7 +2481,8 @@ There are others, there are a multitude of vaccines which probably don't fit in 
  
 And I think that's one of the things that people so vehemently want to get rid of, big government. You know, we have 4.1 million federal employees. Six hundred and fifty federal agencies and department (sic).
  
-That's why they have to take so much of our taxes. TAPPER: Should he stop saying it? Should he stop saying that vaccines cause autism?
+That's why they have to take so much of our taxes. 
+TAPPER: Should he stop saying it? Should he stop saying that vaccines cause autism?
  
 CARSON: Well, you know, I've just explained it to him. He can read about it if he wants to. I think he's an intelligent man and will make the correct decision after getting the real facts.
  
@@ -2647,7 +2656,9 @@ I would just say True Heart.
  
 KASICH: Well, I have one now - they (ph) call me, "Unit One".
  
-My wife says, "You'll never be Unite One, I'm Unite One. You're Unit Two." FIORINA: Secretariat.
+My wife says, "You'll never be Unite One, I'm Unite One. You're Unit Two." 
+
+FIORINA: Secretariat.
  
 TAPPER: Governor Walker?
  
