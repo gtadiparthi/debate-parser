@@ -5,7 +5,7 @@ The accompanying articles with the entire output can be found at the following b
 
 The data used for each of the debates are from:
 https://www.washingtonpost.com/news/the-fix/
-
+http://www.cbsnews.com/news/transcript-sixth-republican-top-tier-debate-2016/
 The individual links to each original data source and created datasets are elaborated in the blogposts.
 
 Run the following command:
