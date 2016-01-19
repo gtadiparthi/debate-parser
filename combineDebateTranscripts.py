@@ -14,6 +14,7 @@ matplotlib.style.use('ggplot')
 dem1 = pd.read_csv("dem_debate1_output.csv")
 dem2 = pd.read_csv("dem_debate2_output.csv")
 dem3 = pd.read_csv("dem_debate3_output.csv")
+dem4 = pd.read_csv("dem_debate4_output.csv")
 print(dem1.head(5))
 print(dem2.head(5))
 
@@ -31,6 +32,8 @@ dem2['Party'] = 'dem'
 dem2['DebateNo'] = '2'
 dem3['Party'] = 'dem'
 dem3['DebateNo'] = '3'
+dem4['Party'] = 'dem'
+dem4['DebateNo'] = '4'
 
 rep1['Party'] = 'rep'
 rep1['DebateNo'] = '1'
@@ -48,6 +51,7 @@ rep6['DebateNo'] = '6'
 dem = dem1.append(dem2,ignore_index=True)
 print(dem.head(5))
 dem = dem.append(dem3,ignore_index=True)
+dem = dem.append(dem4,ignore_index=True)
 rep = rep1.append(rep2,ignore_index=True)
 rep = rep.append(rep3,ignore_index=True)
 rep = rep.append(rep4,ignore_index=True)
