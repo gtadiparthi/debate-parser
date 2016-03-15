@@ -35,8 +35,13 @@ class Transcript():
 		for l in self.raw_messages:
 			#Typically, the transcript is in the following order: 
 			# speaker:<space> message
-			speaker, sep, message = l.partition(": ")
+			# When I used transcripts from washington post, I typically used the above delimiter
+			#speaker, sep, message = l.partition(": ")
+			#Now, I am going to try if the following works
+			# speaker:<nospace> message
+			speaker, sep, message = l.partition(":")
 			lineNo += 1
+			#print(lineNo)
 			if message:
 				self.speakerlist.append(speaker)
 				self.messagelist.append(message)
